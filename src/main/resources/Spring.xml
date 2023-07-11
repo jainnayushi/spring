@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+<!--    For XML based confi-->
+<!--    <bean id="car" class="com.ayushi.demo_spring.Car"/>-->
+<!--    <bean id="bike" class="com.ayushi.demo_spring.Bike"/>-->
+<!--    For Annotation based confi-->
+    <context:component-scan base-package="com.ayushi.demo_spring"/>
+<!--    For Setter Injection-->
+<!--    <bean id="tyre" class="com.ayushi.demo_spring.Tyre" >-->
+<!--        <property name="brand" value="MRF"/>-->
+<!--    </bean>-->
+<!--    For Constructor Injection-->
+    <bean id="tyre" class="com.ayushi.demo_spring.Tyre" >
+        <constructor-arg value="MRF" />
+    </bean>
+<!--    For Object Injection ref and autowire-->
+    <bean id="engine" class="com.ayushi.demo_spring.Engine" />
+<!--    Using ref-->
+<!--    <bean id="cycle" class="com.ayushi.demo_spring.Cycle">-->
+<!--        <constructor-arg name="engine" ref="engine" />-->
+<!--    </bean>-->
+<!--    Using autowire-->
+<!--    <bean id="cycle" class="com.ayushi.demo_spring.Cycle" autowire="constructor"/>-->
+<!--    <bean id="cycle" class="com.ayushi.demo_spring.Cycle" autowire="default"/>-->
+<!--    <bean id="cycle" class="com.ayushi.demo_spring.Cycle" autowire="byName"/>-->
+<!--    <bean id="cycle" class="com.ayushi.demo_spring.Cycle" autowire="byType"/>-->
+<!--    Using @Autowired-->
+        <bean id="cycle" class="com.ayushi.demo_spring.Cycle"/>
+</beans>
